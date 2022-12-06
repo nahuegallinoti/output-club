@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  caret-color: rgba(0, 0, 0, 0);
+}
+
+input,
+textarea {
+  caret-color: rgb(220, 48, 5);
+  outline: none;
+}
+
+
+html,
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #000000;
+
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
