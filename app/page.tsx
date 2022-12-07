@@ -1,6 +1,5 @@
 import Background from "../components/Background";
 import Gallery from "../components/Gallery";
-import Arrow from "../components/ui/Arrow";
 import Divider from "../components/ui/Divider";
 
 export default function Home() {
@@ -8,10 +7,10 @@ export default function Home() {
     <div id="main">
       <Background />
       <Divider
-        margin="m-7"
+        margin="mx-96 my-8"
         colorFrom="from-white"
         colorTo="to-zinc-400"
-        height="h-2"
+        height="h-0.5"
       />
       <Gallery />
     </div>

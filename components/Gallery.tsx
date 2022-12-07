@@ -19,18 +19,18 @@ const Gallery = () => {
 
   return (
     <>
-      <h1 className="text-white font-bold text-5xl justify-center items-center flex pb-4 tracking-widest">
+      <h1 className="text-white font-bold text-4xl justify-center items-center flex tracking-widest mb-5">
         GALLERY
       </h1>
       <section
         id="gallery"
-        className="flex items-center justify-center mx-auto md:w-2/3 mb-5"
+        className="flex items-center justify-center mx-auto md:w-3/5 mb-5"
       >
         <div className="invisible lg:visible">
           <Arrow type="up" style="right-24" animation="animate-bounce" />
         </div>
         <div className="flex mx-4">
-          <Slider images={images} controls={false} height="20vh" width="20vw" />
+          <Slider images={images} controls={false} height="100" width="100" />
         </div>
       </section>
     </>

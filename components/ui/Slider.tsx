@@ -49,12 +49,11 @@ const Slider = (props: any) => {
               </div>
             )}
 
-            <div className="flex sm:h-[85vh]">
+            <div className="">
               <Image
                 key={item}
                 src={`/images/${item}`}
                 alt="image"
-                className="rounded-2xl"
                 width={widthImage}
                 height={heightImage}
               />

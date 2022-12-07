@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useEffect, useState } from "react";
-import Slider from "./ui/Slider";
 
 const Background = () => {
   const [liveVideoId, setLiveVideoId] = useState(null);
@@ -29,7 +28,7 @@ const Background = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center mt-3">
+    <div className="flex justify-center items-center mt-4">
       {liveVideoId ? (
         // Si se encuentra un video en vivo, muestre la transmisión
         <iframe
@@ -39,7 +38,11 @@ const Background = () => {
         />
       ) : (
         // Si no se encuentra un video en vivo, muestre slider
-        <Slider widthImage={3000} />
+        // <Slider widthImage={3000} />
+
+        <video autoPlay muted loop id="teaser">
+          <source src="/teaser.mov" type="video/mp4" />
+        </video>
       )}
     </div>
   );

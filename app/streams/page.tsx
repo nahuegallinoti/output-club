@@ -44,7 +44,7 @@ function StreamsPage() {
 
   return (
     <>
-      <section id="streams" className="grid md:grid-cols-2 gap-10 mx-10 my-5">
+      <section id="streams" className="grid md:grid-cols-2 gap-10 mx-10 my-10">
         {streams.map((stream) => {
           const style = stream.images.length < 3 ? "flex-col" : "";
 

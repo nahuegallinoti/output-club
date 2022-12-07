@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 //import a module with other name
 
@@ -11,10 +12,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav
-        className="grid grid-cols-nav border-b-4 border-slate-400 bg-black text-lg font-bold justify-center
-      items-center h-20 w-full"
-      >
+      <nav className="grid grid-cols-nav bg-black text-xs font-bold justify-center items-center h-10 w-full">
         {/* Burger menu */}
         <section className="flex lg:hidden items-center z-10">
           {/* X */}
@@ -101,16 +99,17 @@ const NavBar = () => {
         </section>
 
         {/* Full menu */}
-        <Link href="/" className="text-white">
-          <span className="py-3 pl-6 hidden lg:flex bg-gradient-to-r from-white via-zinc-300 to-zinc-400 bg-clip-text text-transparent text-2xl hover:animate-ping hover:cursor-pointer tracking-widest">
-            OUTPUT
-          </span>
+        <Link href="/" className="text-white my-4 mx-6">
+          {/* <span className="py-3 pl-6 hidden lg:flex text-xl hover:cursor-pointer tracking-widest">
+            OUTPUT.tv
+          </span> */}
+          <Image src="/images/logo.png" width={100} height={100} alt="logo" />
         </Link>
 
         <div className="hidden lg:flex justify-center">
           <Link
             href="/streams"
-            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
           >
             STREAMS
           </Link>
@@ -118,7 +117,7 @@ const NavBar = () => {
         <div className="hidden lg:flex justify-center">
           <Link
             href="/events"
-            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
           >
             EVENTS
           </Link>
@@ -126,7 +125,7 @@ const NavBar = () => {
         <div className="hidden lg:flex justify-center">
           <Link
             href="/events"
-            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
           >
             SUBSCRIPTIONS
           </Link>
@@ -134,7 +133,7 @@ const NavBar = () => {
         <div className="tracking-widest hidden lg:flex justify-center">
           <Link
             href="#about"
-            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
           >
             ABOUT US
           </Link>
@@ -142,7 +141,7 @@ const NavBar = () => {
         <div className="hidden lg:flex justify-center">
           <Link
             href="#contact"
-            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
           >
             CONTACT INFO
           </Link>

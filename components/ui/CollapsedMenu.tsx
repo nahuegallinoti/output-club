@@ -9,7 +9,7 @@ const CollapsedMenu = ({ tags }: Props) => {
     <ul>
       {tags.map((tag: string, i: number) => (
         <li
-          className="tracking-wider text-white hover:font-2xl rounded-lg px-4 hover:cursor-default"
+          className="tracking-wider text-white hover:font-2xl px-4 hover:cursor-default"
           key={i}
         >
           {tag}
