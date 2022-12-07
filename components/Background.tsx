@@ -29,28 +29,18 @@ const Background = () => {
   }, []);
 
   return (
-    <div>
-      <div className="flex justify-center items-center mt-3">
-        {liveVideoId ? (
-          // Si se encuentra un video en vivo, muestre la transmisión
-          <iframe
-            src={`https://www.youtube.com/embed/${liveVideoId}`}
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        ) : (
-          // Si no se encuentra un video en vivo, muestre slider
-          <Slider />
-          // <iframe
-          //   width="100%"
-          //   height="600"
-          //   src="https://www.youtube.com/embed/d6d_KdqvhxE?autoplay=1"
-          //   title="YouTube video player"
-          //   allow="autoplay"
-          //   allowFullScreen
-          // ></iframe>
-        )}
-      </div>
+    <div className="flex justify-center items-center mt-3">
+      {liveVideoId ? (
+        // Si se encuentra un video en vivo, muestre la transmisión
+        <iframe
+          src={`https://www.youtube.com/embed/${liveVideoId}`}
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      ) : (
+        // Si no se encuentra un video en vivo, muestre slider
+        <Slider widthImage={3000} />
+      )}
     </div>
   );
 };

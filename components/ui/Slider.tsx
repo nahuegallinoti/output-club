@@ -2,13 +2,14 @@
 
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { useState, useEffect } from "react";
-import img1 from "../../public/images/1.jpg";
 import Image from "next/image";
 
 const Slider = (props: any) => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const imagesFromProps = props.images || [img1];
+  const imagesFromProps = props.images || ["1.jpg"];
   const controls = props.controls || false;
+  const widthImage = props.widthImage || "1024";
+  const heightImage = props.heightImage || "1024";
 
   const nextSlide = () => {
     setActiveSlide(
@@ -49,7 +50,14 @@ const Slider = (props: any) => {
             )}
 
             <div className="flex sm:h-[85vh]">
-              <Image src={item} alt="landscape" />
+              <Image
+                key={item}
+                src={`/images/${item}`}
+                alt="image"
+                className="rounded-2xl"
+                width={widthImage}
+                height={heightImage}
+              />
             </div>
 
             {controls && (

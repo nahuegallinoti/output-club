@@ -18,7 +18,7 @@ module.exports = {
         nav: 'auto repeat(5, 1fr)'
       },
       gridTemplateRows: {
-        cardProject: 'auto'
+        cardProject: '4rem 1rem 1fr 2rem'
       },
       animation: {
         'pulse-fast': 'pulseFast 1.5s cubic-bezier(0.5, 0.5, 0.5, 0.5) infinite'

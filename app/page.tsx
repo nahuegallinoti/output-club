@@ -6,7 +6,6 @@ import Divider from "../components/ui/Divider";
 export default function Home() {
   return (
     <div id="main">
-      {/* <Arrow type="down" style="top-48 right-24" /> */}
       <Background />
       <Divider
         margin="m-7"
