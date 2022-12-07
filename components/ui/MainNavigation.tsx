@@ -55,7 +55,7 @@ const NavBar = () => {
             >
               <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
                 <Link
-                  href="/projects"
+                  href="/streams"
                   className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
                 >
                   STREAMS
@@ -99,7 +99,7 @@ const NavBar = () => {
         </section>
 
         {/* Full menu */}
-        <Link href="/" className="text-white my-4 mx-6">
+        <Link href="/" className="text-white my-4 mx-10">
           {/* <span className="py-3 pl-6 hidden lg:flex text-xl hover:cursor-pointer tracking-widest">
             OUTPUT.tv
           </span> */}
