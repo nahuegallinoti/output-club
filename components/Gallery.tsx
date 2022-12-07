@@ -26,7 +26,9 @@ const Gallery = () => {
         id="gallery"
         className="flex items-center justify-center mx-auto md:w-2/3 mb-5"
       >
-        <Arrow type="up" style="right-24" animation="animate-bounce" />
+        <div className="invisible lg:visible">
+          <Arrow type="up" style="right-24" animation="animate-bounce" />
+        </div>
         <div className="flex mx-4">
           <Slider images={images} controls={false} height="20vh" width="20vw" />
         </div>
