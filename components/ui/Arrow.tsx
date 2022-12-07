@@ -10,7 +10,7 @@ import "animate.css";
 interface ArrowProps {
   type: "up" | "down";
   style?: string;
-  animation?: "bounce" | "pulse";
+  animation?: "animate-bounce" | "animate-pulse";
 }
 
 const Arrow = (props: ArrowProps) => {
@@ -32,7 +32,7 @@ const Arrow = (props: ArrowProps) => {
 
   return (
     <div
-      className={`absolute transform translate-x-50 cursor-pointer text-6xl hover:animate-none animate-${props.animation} text-white hover:text-gray-200 ${props.style}`}
+      className={`absolute cursor-pointer text-6xl hover:animate-none text-white hover:text-gray-200 ${props.style} ${props.animation}`}
       onClick={handleClick}
     >
       {props.type === "up" ? (

@@ -30,7 +30,7 @@ const Background = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mt-3">
         {liveVideoId ? (
           // Si se encuentra un video en vivo, muestre la transmisión
           <iframe

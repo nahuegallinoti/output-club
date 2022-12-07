@@ -2,7 +2,7 @@
 
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { useState, useEffect } from "react";
-import img1 from "../../public/images/unsplash1.jpg";
+import img1 from "../../public/images/1.jpg";
 import Image from "next/image";
 
 const Slider = (props: any) => {

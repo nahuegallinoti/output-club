@@ -9,40 +9,42 @@ function StreamsPage() {
         "Description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint et consectetur, pariatur architecto dolore obcaecati dolorem sed assumenda voluptates porro ab qui odit sequi ducimus eveniet totam harum officiis nostrum.",
       live: "live",
       code: "code",
-      tags: ["hola", "chau"],
+      tags: ["Madrid"],
+      image: "1.jpg",
     },
     {
       title: "Title",
       description: "Description",
       live: "live",
       code: "code",
-      tags: ["hola", "chau"],
+      tags: ["Barcelona"],
+      image: "2.jpg",
     },
     {
       title: "Title",
       description: "Description",
       live: "live",
       code: "code",
-      tags: ["hola", "chau"],
+      tags: ["Malaga"],
+      image: "3.jpg",
     },
     {
       title: "Title",
       description: "Description",
       live: "live",
       code: "code",
-      tags: ["hola", "chau"],
+      tags: ["Tenerife"],
+      image: "4.jpg",
     },
   ];
 
   return (
     <>
-      {/* <div className="justify-center mx-10 my-10"> */}
-      <section id="streams" className="grid md:grid-cols-2 gap-10">
+      <section id="streams" className="grid md:grid-cols-2 gap-10 mx-10 my-5">
         {streams.map((stream) => (
-          <Card content={stream} />
+          <Card content={stream} style="m-4" />
         ))}
       </section>
-      {/* </div> */}
     </>
   );
 }

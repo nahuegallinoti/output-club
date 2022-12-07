@@ -38,7 +38,7 @@ const EventsPage = () => {
       <div className="w-1/2 mx-auto my-10 z-10">
         <section>
           {events.map((event) => (
-            <Card content={event} />
+            <Card content={event} style="m-10" />
           ))}
         </section>
       </div>

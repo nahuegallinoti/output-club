@@ -47,7 +47,7 @@ const NavBar = () => {
           <div
             className={
               isNavOpen
-                ? "absolute top-0 left-0 bg-hamburger flex flex-col justify-evenly items-center w-72 h-full bg-black"
+                ? "absolute top-0 left-0 flex flex-col justify-evenly items-center w-full h-full bg-black"
                 : "hidden"
             }
           >
@@ -110,7 +110,7 @@ const NavBar = () => {
         <div className="hidden lg:flex justify-center">
           <Link
             href="/streams"
-            className="tracking-widest text-white hover:bg-white hover:text-black hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
           >
             STREAMS
           </Link>
@@ -118,7 +118,7 @@ const NavBar = () => {
         <div className="hidden lg:flex justify-center">
           <Link
             href="/events"
-            className="tracking-widest text-white hover:bg-white hover:text-black hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
           >
             EVENTS
           </Link>
@@ -126,7 +126,7 @@ const NavBar = () => {
         <div className="hidden lg:flex justify-center">
           <Link
             href="/events"
-            className="tracking-widest text-white hover:bg-white hover:text-black hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
           >
             SUBSCRIPTIONS
           </Link>
@@ -134,7 +134,7 @@ const NavBar = () => {
         <div className="tracking-widest hidden lg:flex justify-center">
           <Link
             href="#about"
-            className="text-white hover:bg-white hover:text-black hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
           >
             ABOUT US
           </Link>
@@ -142,7 +142,7 @@ const NavBar = () => {
         <div className="hidden lg:flex justify-center">
           <Link
             href="#contact"
-            className="tracking-widest text-white hover:bg-white hover:text-black hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
+            className="tracking-widest text-white hover:bg-gradient-to-r hover:from-white hover:via-zinc-300 hover:to-zinc-500 hover:bg-clip-text hover:text-transparent hover:text-xl hover:rounded-md hover:animate-pulse px-2 py-3 hover:cursor-pointer"
           >
             CONTACT INFO
           </Link>
