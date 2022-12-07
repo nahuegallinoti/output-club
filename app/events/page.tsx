@@ -9,6 +9,7 @@ const EventsPage = () => {
       live: "live",
       code: "code",
       tags: ["hola", "chau"],
+      image: "1.jpg",
     },
     {
       title: "Title",
@@ -16,6 +17,7 @@ const EventsPage = () => {
       live: "live",
       code: "code",
       tags: ["hola", "chau"],
+      image: "2.jpg",
     },
     {
       title: "Title",
@@ -23,6 +25,7 @@ const EventsPage = () => {
       live: "live",
       code: "code",
       tags: ["hola", "chau"],
+      image: "3.jpg",
     },
     {
       title: "Title",
@@ -30,6 +33,7 @@ const EventsPage = () => {
       live: "live",
       code: "code",
       tags: ["hola", "chau"],
+      image: "4.jpg",
     },
   ];
 
