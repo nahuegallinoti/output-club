@@ -20,20 +20,12 @@ const Card = ({ content, style }: Props) => {
   return (
     <article
       key={content.id}
-      className={`h-full grid grid-rows-cardProject gap-4 py-2 border-white/60 border-y-[1px] border-x-[1px] items-center bg-black opacity-80 hover:opacity-100 hover:cursor-pointer ${style}
+      className={`h-full grid grid-rows-cardProject gap-4 py-2 hover:border-white/60 hover:border-y-[1px] hover:border-x-[1px] items-center bg-black opacity-80 hover:opacity-100 hover:cursor-pointer ${style}
     }`}
     >
-      <div className="mx-auto my-2">
-        <p className="text-projectTitle font-extrabold text-3xl">
-          {content.title}
-        </p>
+      <div className="mx-auto my-2 p-2">
+        <p className="text-white font-extrabold text-xl">{content.title}</p>
       </div>
-      <Divider
-        width="w-2/3"
-        colorFrom="from-slate-100"
-        colorTo="to-slate-500"
-        height="h-[1px]"
-      />
 
       <div className={`flex flex-wrap ${style}`}>
         {content.images.map((image) => (

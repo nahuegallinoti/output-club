@@ -10,7 +10,7 @@ export default function Home() {
         margin="mx-96 my-8"
         colorFrom="from-white"
         colorTo="to-zinc-400"
-        height="h-0.5"
+        height="h-[1px]"
       />
       <Gallery />
     </div>

@@ -29,8 +29,8 @@ const Gallery = () => {
         <div className="invisible lg:visible">
           <Arrow type="up" style="right-24" animation="animate-bounce" />
         </div>
-        <div className="flex mx-4">
-          <Slider images={images} controls={false} height="100" width="100" />
+        <div className="flex mx-4 ">
+          <Slider images={images} controls={false} height="auto" width="auto" />
         </div>
       </section>
     </>

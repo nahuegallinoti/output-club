@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useEffect, useState } from "react";
+import Toast from "./ui/Toast";
 
 const Background = () => {
   const [liveVideoId, setLiveVideoId] = useState(null);
@@ -28,7 +29,7 @@ const Background = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center mt-4">
+    <div className="flex justify-center items-center mt-4 relative z-10 my-2 bg-cover">
       {liveVideoId ? (
         // Si se encuentra un video en vivo, muestre la transmisión
         <iframe
@@ -40,9 +41,14 @@ const Background = () => {
         // Si no se encuentra un video en vivo, muestre slider
         // <Slider widthImage={3000} />
 
-        <video autoPlay muted loop id="teaser">
-          <source src="/teaser.mov" type="video/mp4" />
-        </video>
+        <Toast
+          title="Titulo del evento"
+          description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, debitis tenetur sit incidunt eius consequatur earum rerum vel facilis dolor in commodi quo dolores labore accusamus. Eveniet, possimus aspernatur! Sed?"
+        >
+          <video autoPlay muted loop id="teaser">
+            <source src="/teaser.mov" type="video/mp4" />
+          </video>
+        </Toast>
       )}
     </div>
   );

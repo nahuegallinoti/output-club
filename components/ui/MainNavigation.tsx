@@ -12,9 +12,9 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="grid grid-cols-nav bg-black text-xs font-bold justify-center items-center h-10 w-full">
+      <nav className="flex justify-between lg:grid lg:grid-cols-nav bg-black text-xs font-bold h-10 w-full items-center pt-5 lg:pt-0">
         {/* Burger menu */}
-        <section className="flex lg:hidden items-center z-10">
+        <section className="flex lg:hidden items-center z-10 pb-2">
           {/* X */}
           <div
             className="px-2 py-2 space-y-2"
@@ -45,7 +45,7 @@ const NavBar = () => {
           <div
             className={
               isNavOpen
-                ? "absolute top-0 left-0 flex flex-col justify-evenly items-center w-full h-full bg-black"
+                ? "absolute top-0 left-0 flex flex-col justify-evenly items-center w-full bg-black"
                 : "hidden"
             }
           >
@@ -53,6 +53,15 @@ const NavBar = () => {
               onClick={() => setIsNavOpen(false)}
               className="flex flex-col items-center justify-between"
             >
+              <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
+                <Link
+                  href="/"
+                  className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
+                >
+                  HOME
+                </Link>
+              </li>
+
               <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
                 <Link
                   href="/streams"
@@ -80,7 +89,7 @@ const NavBar = () => {
 
               <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
                 <Link
-                  href="/projects"
+                  href="/events"
                   className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
                 >
                   ABOUT US
@@ -100,10 +109,13 @@ const NavBar = () => {
 
         {/* Full menu */}
         <Link href="/" className="text-white my-4 mx-10">
-          {/* <span className="py-3 pl-6 hidden lg:flex text-xl hover:cursor-pointer tracking-widest">
-            OUTPUT.tv
-          </span> */}
-          <Image src="/images/logo.png" width={100} height={100} alt="logo" />
+          <Image
+            src="/images/logo.png"
+            width={100}
+            height={100}
+            alt="logo"
+            className="w-24 h-8"
+          />
         </Link>
 
         <div className="hidden lg:flex justify-center">

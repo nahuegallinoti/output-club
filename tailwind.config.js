@@ -18,7 +18,7 @@ module.exports = {
         nav: 'auto repeat(5, 1fr)'
       },
       gridTemplateRows: {
-        cardProject: '4rem 1rem 1fr 2rem'
+        cardProject: '4rem 1fr 2rem'
       },
       animation: {
         'pulse-fast': 'pulseFast 1.5s cubic-bezier(0.5, 0.5, 0.5, 0.5) infinite'
@@ -27,6 +27,10 @@ module.exports = {
         pulseFast: {
           '50%': { opacity: 0.5 },
           '0%, 100%': { opacity: 1 }
+        },
+        typeWriter: {
+          '0%': { width: '0' },
+          '100%': { width: '100%' }
         }
       }
     }
