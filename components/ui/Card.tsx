@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import CollapsedMenu from "./CollapsedMenu";
 import Toast from "./Toast";
 
@@ -18,35 +20,50 @@ interface Props {
 }
 
 const Card = ({ content, style, articleStyle }: Props) => {
+  const [hovered, setHovered] = React.useState(false);
+
   return (
     <article
       key={content.id}
-      className={`${articleStyle} hover:shadow-md hover:shadow-white gap-4 py-2 hover:border-white/60 hover:border-y-[1px] hover:border-x-[1px] items-center bg-black opacity-80 hover:opacity-100 hover:cursor-pointer ${style}
-    }`}
+      className={`${articleStyle} hover:shadow-md hover:shadow-white gap-4 py-2 hover:border-white/60 hover:border-y-[1px] hover:border-x-[1px] items-center opacity-80 hover:opacity-100 hover:cursor-pointer transition-all w-1/3 h-1/3 ${style}
+      ${hovered ? "bg-transparent text-center" : "bg-black"}`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
-      {/* <div className="mx-auto">
-        <p className="text-white font-extrabold text-xl">{content.title}</p>
-      </div> */}
-      <div className="flex bg-black w-fit hover:bg-white">
-        <CollapsedMenu tags={content.tags} />
-      </div>
+      {!hovered ? (
+        <div className="flex bg-black w-fit hover:bg-white">
+          <CollapsedMenu tags={content.tags} />
+        </div>
+      ) : null}
 
       <div className={`flex flex-wrap ${style}`}>
         {content.images.map((image) => (
           <Image
             src={`/images/${image}`}
-            width={300}
-            height={300}
-            alt={""}
-            className="opacity-60 hover:opacity-100 rounded-2xl hover:cursor-pointer p-5"
+            width={500}
+            height={500}
+            alt={content.title}
+            className={`${
+              hovered ? "invisible" : "visible"
+            } hover:opacity-100 rounded-2xl hover:cursor-pointer`}
           />
         ))}
       </div>
-      <Toast
+      {/* <Toast
         title={content.title}
         description={content.description}
-        style="relative p-2 hover:p-4"
-      />
+        style="relative"
+        styleExpanded="w-60 h-fit"
+        styleContracted="w-48 h-4"
+      /> */}
+      {hovered ? (
+        <div className="flex flex-col relative left-0 right-0 text-white">
+          <p className="font-bold text-center text-xl">{content.title}</p>
+          <p className="font-semibold text-left pl-4 py-4">
+            {content.description}
+          </p>
+        </div>
+      ) : null}
     </article>
   );
 };

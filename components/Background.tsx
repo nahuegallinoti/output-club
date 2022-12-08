@@ -46,7 +46,8 @@ const Background = () => {
             title="HALFBAKED in LesEnfants, Barcelona"
             description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, debitis tenetur sit incidunt eius consequatur earum rerum vel"
             style="absolute left-4 top-1/3 xs:top-1/2 sm:top-3/4 px-2 py-4"
-            styleExpanded="top-20"
+            styleExpanded="w-60 h-fit top-20"
+            styleContracted="w-48 h-16"
           />
           <video autoPlay muted loop id="teaser">
             <source src="/teaser.mov" type="video/mp4" />

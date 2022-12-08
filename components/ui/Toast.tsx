@@ -1,19 +1,26 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 type ToastProps = {
   title: string;
   description: string;
   style?: string;
   styleExpanded?: string;
+  styleContracted?: string;
 };
 
-const Toast = ({ title, description, style, styleExpanded }: ToastProps) => {
+const Toast = ({
+  title,
+  description,
+  style,
+  styleExpanded,
+  styleContracted,
+}: ToastProps) => {
   const [hovered, setHovered] = useState(false);
 
-  const toastExpanded = `w-60 h-fit ${styleExpanded}`;
-  const toastContracted = `w-48 h-16`;
+  const toastExpanded = ` ${styleExpanded}`;
+  const toastContracted = `${styleContracted}`;
 
   const expandToast = () => {
     setHovered(true);

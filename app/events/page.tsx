@@ -15,8 +15,9 @@ const EventsPage = () => {
     },
     {
       id: 2,
-      title: "Title",
-      description: "Description",
+      title: "APOLLONIA",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       live: "live",
       code: "code",
       tags: ["Dec-29"],
@@ -24,8 +25,9 @@ const EventsPage = () => {
     },
     {
       id: 3,
-      title: "Title",
-      description: "Description",
+      title: "AMELIE LENS",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       live: "live",
       code: "code",
       tags: ["Jan-10"],
@@ -33,8 +35,9 @@ const EventsPage = () => {
     },
     {
       id: 4,
-      title: "Title",
-      description: "Description",
+      title: "OXIA",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       live: "live",
       code: "code",
       tags: ["Feb-02"],
@@ -43,7 +46,7 @@ const EventsPage = () => {
   ];
 
   return (
-    <section className="flex flex-row flex-wrap w-3/4 mx-auto my-20 gap-10 z-10 justify-between">
+    <section className="flex flex-row flex-wrap w-3/4 mx-auto my-12 gap-10 z-10 justify-evenly">
       {events.map((event) => (
         <Card content={event} articleStyle="grid grid-rows-events" />
       ))}
