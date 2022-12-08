@@ -9,6 +9,13 @@ module.exports = {
     container: {
       center: true
     },
+    screens: {
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px'
+    },
     extend: {
       colors: {
         projectTitle: '#9cc9e3',
@@ -18,7 +25,8 @@ module.exports = {
         nav: 'auto repeat(5, 1fr)'
       },
       gridTemplateRows: {
-        cardProject: '4rem 1fr 2rem'
+        events: '1rem 1fr auto',
+        streams: '2rem 1fr auto'
       },
       animation: {
         'pulse-fast': 'pulseFast 1.5s cubic-bezier(0.5, 0.5, 0.5, 0.5) infinite'

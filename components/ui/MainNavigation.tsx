@@ -14,7 +14,7 @@ const NavBar = () => {
     <>
       <nav className="flex justify-between lg:grid lg:grid-cols-nav bg-black text-xs font-bold h-10 w-full items-center pt-5 lg:pt-0 z-20">
         {/* Burger menu */}
-        <section className="flex lg:hidden items-center z-10 pb-2">
+        <section className="flex lg:hidden items-center z-20 pb-2">
           {/* X */}
           <div
             className="px-2 py-2 space-y-2"

@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Toast from "./ui/Toast";
 
 const Background = () => {
   const [liveVideoId, setLiveVideoId] = useState(null);
+  const [fetchLiveVideo, setFetchLiveVideo] = useState(false);
 
   useEffect(() => {
     async function fetchLiveVideo() {
@@ -25,8 +25,11 @@ const Background = () => {
       }
     }
 
-    fetchLiveVideo();
-  }, []);
+    // Realice la llamada a la API solo si se ha indicado que se debe hacer
+    if (fetchLiveVideo) {
+      fetchLiveVideo();
+    }
+  }, [fetchLiveVideo]);
 
   return (
     <div className="flex justify-center items-center mt-4 z-10 my-2 bg-cover">
@@ -38,17 +41,17 @@ const Background = () => {
           allowFullScreen
         />
       ) : (
-        // Si no se encuentra un video en vivo, muestre slider
-        // <Slider widthImage={3000} />
-
-        <Toast
-          title="HALFBAKED in LesEnfants, Barcelona"
-          description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, debitis tenetur sit incidunt eius consequatur earum rerum vel facilis dolor in commodi quo dolores labore accusamus. Eveniet, possimus aspernatur! Sed?"
-        >
+        <>
+          <Toast
+            title="HALFBAKED in LesEnfants, Barcelona"
+            description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, debitis tenetur sit incidunt eius consequatur earum rerum vel"
+            style="absolute left-4 top-1/3 xs:top-1/2 sm:top-3/4 px-2 py-4"
+            styleExpanded="top-20"
+          />
           <video autoPlay muted loop id="teaser">
             <source src="/teaser.mov" type="video/mp4" />
           </video>
-        </Toast>
+        </>
       )}
     </div>
   );

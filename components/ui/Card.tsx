@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import CollapsedMenu from "./CollapsedMenu";
-import Divider from "./Divider";
+import Toast from "./Toast";
 
 interface Props {
   content: {
@@ -14,17 +14,21 @@ interface Props {
     images: string[];
   };
   style?: string;
+  articleStyle?: string;
 }
 
-const Card = ({ content, style }: Props) => {
+const Card = ({ content, style, articleStyle }: Props) => {
   return (
     <article
       key={content.id}
-      className={`h-full grid grid-rows-cardProject gap-4 py-2 hover:border-white/60 hover:border-y-[1px] hover:border-x-[1px] items-center bg-black opacity-80 hover:opacity-100 hover:cursor-pointer ${style}
+      className={`${articleStyle} hover:shadow-md hover:shadow-white gap-4 py-2 hover:border-white/60 hover:border-y-[1px] hover:border-x-[1px] items-center bg-black opacity-80 hover:opacity-100 hover:cursor-pointer ${style}
     }`}
     >
-      <div className="mx-auto my-2 p-2">
+      {/* <div className="mx-auto">
         <p className="text-white font-extrabold text-xl">{content.title}</p>
+      </div> */}
+      <div className="flex bg-black w-fit hover:bg-white">
+        <CollapsedMenu tags={content.tags} />
       </div>
 
       <div className={`flex flex-wrap ${style}`}>
@@ -34,13 +38,15 @@ const Card = ({ content, style }: Props) => {
             width={300}
             height={300}
             alt={""}
-            className="opacity-60 hover:opacity-100 rounded-2xl mx-auto hover:cursor-pointer px-4 py-4"
+            className="opacity-60 hover:opacity-100 rounded-2xl hover:cursor-pointer p-5"
           />
         ))}
       </div>
-      <div className="flex bg-black w-fit hover:bg-white">
-        <CollapsedMenu tags={content.tags} />
-      </div>
+      <Toast
+        title={content.title}
+        description={content.description}
+        style="relative p-2 hover:p-4"
+      />
     </article>
   );
 };

@@ -50,7 +50,11 @@ function StreamsPage() {
 
           return (
             <div className="flex flex-col flex-wrap">
-              <Card content={stream} style={style} />
+              <Card
+                content={stream}
+                style={style}
+                articleStyle="grid grid-rows-streams"
+              />
             </div>
           );
         })}

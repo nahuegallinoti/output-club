@@ -5,12 +5,13 @@ const EventsPage = () => {
   const events = [
     {
       id: 1,
-      title: "Event 1",
-      description: "Description",
+      title: "TRAUMER",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aspernatur assumenda similique quas, pariatur et deserunt, ipsam quia explicabo aliquam nam autem doloribus accusamus dolor sit in aperiam. ",
       live: "live",
       code: "code",
       tags: ["Dec-22"],
-      images: ["1.jpg"],
+      images: ["flyers/flyer1.jpg"],
     },
     {
       id: 2,
@@ -42,15 +43,11 @@ const EventsPage = () => {
   ];
 
   return (
-    <>
-      <div className="w-5/6 lg:w-2/3 mx-auto my-10 z-10">
-        <section>
-          {events.map((event) => (
-            <Card content={event} style="m-10" />
-          ))}
-        </section>
-      </div>
-    </>
+    <section className="flex flex-row flex-wrap w-3/4 mx-auto my-20 gap-10 z-10 justify-between">
+      {events.map((event) => (
+        <Card content={event} articleStyle="grid grid-rows-events" />
+      ))}
+    </section>
   );
 };
 
