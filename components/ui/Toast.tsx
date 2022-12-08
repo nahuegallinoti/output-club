@@ -28,7 +28,7 @@ const Toast = ({ children, title, description }: ToastProps) => {
     <div className="relative z-0">
       {children}
       <div
-        className={`cursor-pointer overflow-hidden absolute left-4 right-4 bottom-0 top-12 z-10 text-black bg-zinc-300 hover:opacity-90 opacity-30 px-4 font-semibold transition-all ${
+        className={`cursor-pointer overflow-hidden absolute left-4 right-4 bottom-1/4 z-10 text-white bg-black hover:opacity-90 opacity-70 px-4 font-semibold transition-all ${
           hovered ? toastExpanded : toastContracted
         }`}
         onMouseEnter={expandToast}
