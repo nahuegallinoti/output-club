@@ -42,7 +42,7 @@ const Background = () => {
         // <Slider widthImage={3000} />
 
         <Toast
-          title="Halfbaked in Les Enfants, Barcelona"
+          title="HALFBAKED in LesEnfants, Barcelona"
           description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, debitis tenetur sit incidunt eius consequatur earum rerum vel facilis dolor in commodi quo dolores labore accusamus. Eveniet, possimus aspernatur! Sed?"
         >
           <video autoPlay muted loop id="teaser">
