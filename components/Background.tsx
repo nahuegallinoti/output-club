@@ -29,7 +29,7 @@ const Background = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center mt-4 relative z-10 my-2 bg-cover">
+    <div className="flex justify-center items-center mt-4 z-10 my-2 bg-cover">
       {liveVideoId ? (
         // Si se encuentra un video en vivo, muestre la transmisión
         <iframe
@@ -42,7 +42,7 @@ const Background = () => {
         // <Slider widthImage={3000} />
 
         <Toast
-          title="Titulo del evento"
+          title="Cassie Raptor at Fabric"
           description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, debitis tenetur sit incidunt eius consequatur earum rerum vel facilis dolor in commodi quo dolores labore accusamus. Eveniet, possimus aspernatur! Sed?"
         >
           <video autoPlay muted loop id="teaser">

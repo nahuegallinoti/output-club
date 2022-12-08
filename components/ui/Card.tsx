@@ -34,11 +34,11 @@ const Card = ({ content, style }: Props) => {
             width={300}
             height={300}
             alt={""}
-            className="opacity-60 hover:opacity-100 rounded-2xl mx-auto hover:scale-105 hover:cursor-pointer px-4 py-4"
+            className="opacity-60 hover:opacity-100 rounded-2xl mx-auto hover:cursor-pointer px-4 py-4"
           />
         ))}
       </div>
-      <div className="flex bg-black w-fit hover:bg-slate-700">
+      <div className="flex bg-black w-fit hover:bg-white">
         <CollapsedMenu tags={content.tags} />
       </div>
     </article>
