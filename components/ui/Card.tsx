@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import CollapsedMenu from "./CollapsedMenu";
-import Toast from "./Toast";
 
 interface Props {
   content: {
@@ -22,47 +21,54 @@ interface Props {
 const Card = ({ content, style, articleStyle }: Props) => {
   const [hovered, setHovered] = React.useState(false);
 
+  const hoveredStyles =
+    "hover:shadow-md hover:shadow-white hover:border-white/60 hover:border-y-[1px] hover:border-x-[1px] hover:opacity-100 hover:cursor-pointer";
+
   return (
     <article
       key={content.id}
-      className={`${articleStyle} hover:shadow-md hover:shadow-white gap-4 py-2 hover:border-white/60 hover:border-y-[1px] hover:border-x-[1px] items-center opacity-80 hover:opacity-100 hover:cursor-pointer transition-all w-1/3 h-1/3 ${style}
-      ${hovered ? "bg-transparent text-center" : "bg-black"}`}
+      className={`${hoveredStyles} ${style} ${articleStyle} items-center opacity-80 transition-all w-fit h-full
+      ${hovered ? "bg-transparent text-center w-1/2 h-full" : "bg-black"}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {!hovered ? (
-        <div className="flex bg-black w-fit hover:bg-white">
+        <section className="flex w-fit bg-white text-black font-bold">
           <CollapsedMenu tags={content.tags} />
-        </div>
+        </section>
       ) : null}
 
-      <div className={`flex flex-wrap ${style}`}>
+      <section className={`flex flex-wrap ${style}`}>
         {content.images.map((image) => (
           <Image
             src={`/images/${image}`}
             width={500}
             height={500}
             alt={content.title}
-            className={`${
-              hovered ? "invisible" : "visible"
-            } hover:opacity-100 rounded-2xl hover:cursor-pointer`}
+            className={`${hovered ? "invisible" : "visible"}`}
           />
         ))}
-      </div>
-      {/* <Toast
-        title={content.title}
-        description={content.description}
-        style="relative"
-        styleExpanded="w-60 h-fit"
-        styleContracted="w-48 h-4"
-      /> */}
+      </section>
       {hovered ? (
-        <div className="flex flex-col relative left-0 right-0 text-white">
-          <p className="font-bold text-center text-xl">{content.title}</p>
-          <p className="font-semibold text-left pl-4 py-4">
-            {content.description}
-          </p>
-        </div>
+        <>
+          <section className="flex flex-col gap-5 h-[70vh] left-0 right-0 text-white">
+            <p className="font-bold text-xl">{content.title}</p>
+            <CollapsedMenu tags={content.tags} styles="bg-red-800" />
+            {content.images.map((image) => (
+              <article className="flex justify-center">
+                <Image
+                  src={`/images/${image}`}
+                  width={250}
+                  height={250}
+                  alt={content.title}
+                />
+              </article>
+            ))}
+            <p className="font-semibold text-left px-10 justify-center items-center">
+              {content.description}
+            </p>
+          </section>
+        </>
       ) : null}
     </article>
   );
