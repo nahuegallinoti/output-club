@@ -21,12 +21,12 @@ interface Props {
 const Card = ({ content, style, articleStyle }: Props) => {
   const [hovered, setHovered] = useState(false);
 
-  const hoveredStyles = "cursor-pointer text-center w-1/3";
+  const hoveredStyles = "cursor-pointer text-center";
 
   return (
     <article
       key={content.id}
-      className={`${articleStyle} border-[1px] border-white
+      className={`${articleStyle} border-[1px] border-white mx-5 sm:w-2/3
       ${hovered ? hoveredStyles : ""}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
