@@ -25,7 +25,7 @@ module.exports = {
         nav: 'auto repeat(5, 1fr)'
       },
       gridTemplateRows: {
-        events: '1rem 1fr auto',
+        events: 'repeat(2, auto)',
         streams: '2rem 1fr auto'
       },
       animation: {

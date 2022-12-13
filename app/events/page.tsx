@@ -5,13 +5,13 @@ const EventsPage = () => {
   const events = [
     {
       id: 1,
-      title: "TRAUMER",
+      title: "LOUD - CONTACT",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aspernatur assumenda similique quas, pariatur et deserunt, ipsam quia explicabo aliquam nam autem doloribus accusamus dolor sit in aperiam. ",
       live: "live",
       code: "code",
-      tags: ["Dec-22"],
-      images: ["flyers/flyer1.jpg"],
+      tags: ["NOV - 12"],
+      images: ["flyers/1.jpg"],
     },
     {
       id: 2,
@@ -20,8 +20,8 @@ const EventsPage = () => {
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       live: "live",
       code: "code",
-      tags: ["Dec-29"],
-      images: ["2.jpg"],
+      tags: ["NOV - 19"],
+      images: ["flyers/2.jpg"],
     },
     {
       id: 3,
@@ -30,8 +30,8 @@ const EventsPage = () => {
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       live: "live",
       code: "code",
-      tags: ["Jan-10"],
-      images: ["3.jpg"],
+      tags: ["NOV - 04"],
+      images: ["flyers/3.jpg"],
     },
     {
       id: 4,
@@ -40,17 +40,17 @@ const EventsPage = () => {
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       live: "live",
       code: "code",
-      tags: ["Feb-02"],
-      images: ["4.jpg"],
+      tags: ["NOV - 11"],
+      images: ["flyers/4.jpg"],
     },
   ];
 
   return (
-    <section className="flex flex-row flex-wrap w-3/4 mx-auto my-12 gap-10 z-10 justify-evenly">
+    <div className="flex flex-col my-12 gap-16 z-10 items-center">
       {events.map((event) => (
-        <Card content={event} articleStyle="grid grid-rows-events" />
+        <Card content={event} key={event.id} />
       ))}
-    </section>
+    </div>
   );
 };
 

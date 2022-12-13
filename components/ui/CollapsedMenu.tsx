@@ -10,7 +10,7 @@ const CollapsedMenu = ({ tags, styles }: Props) => {
     <ul>
       {tags.map((tag: string, i: number) => (
         <li
-          className={`${styles} tracking-wider hover:font-2xl px-4 hover:cursor-default hover:font-bold transition-colors duration-700 ease-in-out`}
+          className={`${styles} tracking-wider px-2 hover:cursor-default transition-colors duration-500 ease-in-out`}
           key={i}
         >
           {tag}

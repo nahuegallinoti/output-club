@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import CollapsedMenu from "./CollapsedMenu";
 
 interface Props {
@@ -19,57 +19,60 @@ interface Props {
 }
 
 const Card = ({ content, style, articleStyle }: Props) => {
-  const [hovered, setHovered] = React.useState(false);
+  const [hovered, setHovered] = useState(false);
 
-  const hoveredStyles =
-    "hover:shadow-md hover:shadow-white hover:border-white/60 hover:border-y-[1px] hover:border-x-[1px] hover:opacity-100 hover:cursor-pointer";
+  const hoveredStyles = "cursor-pointer text-center w-1/3";
 
   return (
     <article
       key={content.id}
-      className={`${hoveredStyles} ${style} ${articleStyle} items-center opacity-80 transition-all w-fit h-full
-      ${hovered ? "bg-transparent text-center w-1/2 h-full" : "bg-black"}`}
+      className={`${articleStyle} border-[1px] border-white
+      ${hovered ? hoveredStyles : ""}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {!hovered ? (
-        <section className="flex w-fit bg-white text-black font-bold">
-          <CollapsedMenu tags={content.tags} />
-        </section>
-      ) : null}
-
-      <section className={`flex flex-wrap ${style}`}>
-        {content.images.map((image) => (
-          <Image
-            src={`/images/${image}`}
-            width={500}
-            height={500}
-            alt={content.title}
-            className={`${hovered ? "invisible" : "visible"}`}
-          />
-        ))}
-      </section>
-      {hovered ? (
         <>
-          <section className="flex flex-col gap-5 h-[70vh] left-0 right-0 text-white">
-            <p className="font-bold text-xl">{content.title}</p>
-            <CollapsedMenu tags={content.tags} styles="bg-red-800" />
+          <section className="w-fit bg-white text-black font-bold -rotate-45 relative top-4 right-3">
+            <CollapsedMenu tags={content.tags} />
+          </section>
+
+          <section className={`${style}`}>
             {content.images.map((image) => (
-              <article className="flex justify-center">
+              <Image
+                src={`/images/${image}`}
+                width={500}
+                height={500}
+                alt={content.title}
+                key={content.id}
+              />
+            ))}
+          </section>
+        </>
+      ) : (
+        <>
+          <section className="w-fit bg-black text-white font-bold">
+            <CollapsedMenu tags={content.tags} />
+          </section>
+
+          <section className="text-white">
+            <p className="font-bold text-xl my-5">{content.title}</p>
+            {content.images.map((image) => (
+              <div className="flex justify-center" key={content.id}>
                 <Image
                   src={`/images/${image}`}
                   width={250}
                   height={250}
                   alt={content.title}
                 />
-              </article>
+              </div>
             ))}
-            <p className="font-semibold text-left px-10 justify-center items-center">
+            <p className="font-semibold text-left px-10 my-5">
               {content.description}
             </p>
           </section>
         </>
-      ) : null}
+      )}
     </article>
   );
 };
