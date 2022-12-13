@@ -44,15 +44,16 @@ function StreamsPage() {
 
   return (
     <>
-      <section id="streams" className="grid md:grid-cols-2 gap-10 mx-10 my-20">
+      <section
+        id="streams"
+        className="flex flex-col items-center justify-center gap-5 mx-auto my-10"
+      >
         {streams.map((stream) => {
-          const style = stream.images.length < 3 ? "flex-col" : "";
-
           return (
-            <div className="flex flex-col flex-wrap">
+            <div className="">
               <Card
                 content={stream}
-                style={style}
+                style=""
                 articleStyle="grid grid-rows-streams"
               />
             </div>

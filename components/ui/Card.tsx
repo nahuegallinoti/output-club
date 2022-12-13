@@ -21,59 +21,43 @@ interface Props {
 const Card = ({ content, style, articleStyle }: Props) => {
   const [hovered, setHovered] = useState(false);
 
-  const hoveredStyles = "cursor-pointer text-center";
+  const hoveredStyles = "cursor-pointer opacity-100 w-2/3";
 
   return (
-    <article
-      key={content.id}
-      className={`${articleStyle} border-[1px] border-white mx-5 sm:w-2/3
-      ${hovered ? hoveredStyles : ""}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {!hovered ? (
-        <>
-          <section className="w-fit bg-white text-black font-bold -rotate-45 relative top-4 right-3">
-            <CollapsedMenu tags={content.tags} />
-          </section>
+    <>
+      <article
+        key={content.id}
+        className={`${articleStyle} border-[1px] border-white mx-5 transition-all duration-200
+      ${hovered ? hoveredStyles : "opacity-70 w-1/3 overflow-hidden"}`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {/* <section className="text-center w-fit bg-white text-black font-bold -rotate-45 relative top-5 right-7">
+          <CollapsedMenu tags={content.tags} />
+        </section> */}
 
-          <section className={`${style}`}>
-            {content.images.map((image) => (
-              <Image
-                src={`/images/${image}`}
-                width={500}
-                height={500}
-                alt={content.title}
-                key={content.id}
-              />
-            ))}
-          </section>
-        </>
-      ) : (
-        <>
-          <section className="w-fit bg-black text-white font-bold">
-            <CollapsedMenu tags={content.tags} />
-          </section>
+        <section className={`${style} flex flex-row`}>
+          {content.images.map((image) => (
+            <Image
+              src={`/images/${image}`}
+              width={500}
+              height={500}
+              alt={content.title}
+              key={content.id}
+            />
+          ))}
 
-          <section className="text-white">
-            <p className="font-bold text-xl my-5">{content.title}</p>
-            {content.images.map((image) => (
-              <div className="flex justify-center" key={content.id}>
-                <Image
-                  src={`/images/${image}`}
-                  width={250}
-                  height={250}
-                  alt={content.title}
-                />
-              </div>
-            ))}
-            <p className="font-semibold text-left px-10 my-5">
-              {content.description}
+          <div className="invisible lg:visible flex flex-col text-white text-left text-2xl px-10 justify-evenly">
+            <p className="font-bold bg-white text-black w-fit px-2">
+              {content.title}
             </p>
-          </section>
-        </>
-      )}
-    </article>
+            {hovered ? (
+              <p className="font-semibold">{content.description}</p>
+            ) : null}
+          </div>
+        </section>
+      </article>
+    </>
   );
 };
 

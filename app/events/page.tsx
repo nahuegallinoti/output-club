@@ -10,7 +10,7 @@ const EventsPage = () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aspernatur assumenda similique quas, pariatur et deserunt, ipsam quia explicabo aliquam nam autem doloribus accusamus dolor sit in aperiam. ",
       live: "live",
       code: "code",
-      tags: ["NOV - 12"],
+      tags: ["LesEnfants"],
       images: ["flyers/1.jpg"],
     },
     {
