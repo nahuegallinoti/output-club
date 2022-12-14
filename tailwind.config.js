@@ -26,7 +26,7 @@ module.exports = {
       },
       gridTemplateRows: {
         events: 'repeat(2, auto)',
-        streams: '2rem 1fr auto'
+        streams: 'repeat(2, auto)'
       },
       animation: {
         'pulse-fast': 'pulseFast 1.5s cubic-bezier(0.5, 0.5, 0.5, 0.5) infinite'

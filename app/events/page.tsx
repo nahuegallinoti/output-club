@@ -46,11 +46,11 @@ const EventsPage = () => {
   ];
 
   return (
-    <div className="flex flex-col my-12 gap-16 z-10 items-center">
+    <section className="flex flex-col my-12 gap-16 z-10 items-center">
       {events.map((event) => (
         <Card content={event} key={event.id} />
       ))}
-    </div>
+    </section>
   );
 };
 

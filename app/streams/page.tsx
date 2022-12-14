@@ -44,10 +44,7 @@ function StreamsPage() {
 
   return (
     <>
-      <section
-        id="streams"
-        className="flex flex-col items-center justify-center gap-5 mx-auto my-10"
-      >
+      <section className="flex flex-col my-12 gap-16 z-10 items-center">
         {streams.map((stream) => {
           return (
             <div className="">
