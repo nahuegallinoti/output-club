@@ -46,7 +46,7 @@ const EventsPage = () => {
   ];
 
   return (
-    <section className="flex flex-col my-12 gap-16 z-10 items-center">
+    <section className="flex flex-col my-12 md:gap-20 gap-10 z-10 items-center">
       {events.map((event) => (
         <Card content={event} key={event.id} />
       ))}
