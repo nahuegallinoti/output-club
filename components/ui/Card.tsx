@@ -22,14 +22,14 @@ const Card = ({ content, style, articleStyle }: Props) => {
   const [hovered, setHovered] = useState(false);
 
   const hoveredStyles =
-    "md:w-2/3 cursor-pointer opacity-100 border-[1px] border-white";
+    "md:w-3/4 cursor-pointer opacity-100 border-[1px] border-white";
 
   return (
     <>
       <article
         key={content.id}
-        className={`${articleStyle} shadow-inner shadow-cyan-800 overflow-hidden transition-all duration-500 mx-5
-        lg:max-w-2/3 max-h-fit sm:w-2/3 md:w-1/3 md:p-4 
+        className={`${articleStyle} shadow-inner shadow-white overflow-hidden transition-all duration-500 mx-5
+        max-h-fit lg:max-w-2/3 sm:w-2/3 md:w-1/3 md:p-4 
         ${hovered ? hoveredStyles : "opacity-70"}`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
