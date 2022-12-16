@@ -2,39 +2,31 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import CollapsedMenu from "./CollapsedMenu";
+import { IEventProps } from "../../interfaces/Pages/IEventProps";
 
-interface Props {
-  content: {
-    id: number;
-    title: string;
-    description: string;
-    live: string;
-    code: string;
-    tags: string[];
-    images: string[];
-  };
-  style?: string;
-  articleStyle?: string;
-}
-
-const Card = ({ content, style, articleStyle }: Props) => {
+const Card = ({ content, styles }: IEventProps) => {
   const [hovered, setHovered] = useState(false);
 
-  const hoveredStyles =
-    "md:w-3/4 cursor-pointer opacity-100 border-[1px] border-white";
+  const defaultStyle = `${styles?.defaultStyle}`;
+  const hoveredStyle = `${styles?.hoveredStyles}`;
+  const articleStyle = `${styles?.articleStyle}`;
+  const sectionStyle = `${styles?.sectionStyle}`;
+
+  const sectionDescriptionStyle = `${styles?.descriptionStyles?.sectionDescriptionStyle}`;
+  const titleStyle = `${styles?.descriptionStyles?.titleStyle}`;
+  const descriptionStyle = `${styles?.descriptionStyles?.descriptionStyle}`;
+
+  const imageStyle = `${styles?.imageStyle}`;
 
   return (
     <>
       <article
         key={content.id}
-        className={`${articleStyle} shadow-inner shadow-white overflow-hidden transition-all duration-500 mx-5
-        max-h-fit lg:max-w-2/3 sm:w-2/3 md:w-1/3 md:p-4 
-        ${hovered ? hoveredStyles : "opacity-70"}`}
+        className={`${articleStyle} ${hovered ? hoveredStyle : defaultStyle}`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <section className={`${style} flex sm:flex-row flex-col`}>
+        <section className={`${sectionStyle}`}>
           {content.images.map((image) => (
             <Image
               src={`/images/${image}`}
@@ -42,18 +34,15 @@ const Card = ({ content, style, articleStyle }: Props) => {
               key={content.id}
               width={450}
               height={500}
+              className={`${imageStyle}`}
             />
           ))}
 
-          {hovered ? (
-            <div className="visible flex flex-col px-10 py-5 justify-evenly">
-              <p className="font-bold text-2xl bg-white text-black w-fit px-2 py-2">
-                {content.title}
-              </p>
-              <p className="font-semibold text-xl text-white">
-                {content.description}
-              </p>
-            </div>
+          {hovered && content.type == "event" ? (
+            <section className={`${sectionDescriptionStyle}`}>
+              <p className={`${titleStyle}`}>{content.title}</p>
+              <p className={`${descriptionStyle}`}>{content.description}</p>
+            </section>
           ) : null}
         </section>
       </article>

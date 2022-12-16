@@ -81,15 +81,6 @@ const NavBar = () => {
                   HOME
                 </Link>
               </li>
-
-              <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
-                <Link
-                  href="/streams"
-                  className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
-                >
-                  STREAMS
-                </Link>
-              </li>
               <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
                 <Link
                   href="/events"
@@ -100,8 +91,17 @@ const NavBar = () => {
               </li>
               <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
                 <Link
-                  href="/events"
+                  href="/streams"
                   className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
+                >
+                  STREAMS
+                </Link>
+              </li>
+
+              <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
+                <Link
+                  href="/events"
+                  className="hover:cursor-not-allowed text-zinc-500 hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
                 >
                   SUBSCRIPTIONS
                 </Link>
@@ -109,7 +109,7 @@ const NavBar = () => {
 
               <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
                 <Link
-                  href="/events"
+                  href="/about"
                   className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
                 >
                   ABOUT US
@@ -117,7 +117,7 @@ const NavBar = () => {
               </li>
               <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
                 <Link
-                  href="/events"
+                  href="/contact"
                   className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
                 >
                   CONTACT INFO
@@ -137,6 +137,14 @@ const NavBar = () => {
             className="w-24 h-8"
           />
         </Link>
+        <div className="hidden lg:flex justify-center">
+          <Link
+            href="/events"
+            className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
+          >
+            EVENTS
+          </Link>
+        </div>
 
         <div className="hidden lg:flex justify-center">
           <Link
@@ -149,22 +157,14 @@ const NavBar = () => {
         <div className="hidden lg:flex justify-center">
           <Link
             href="/events"
-            className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
-          >
-            EVENTS
-          </Link>
-        </div>
-        <div className="hidden lg:flex justify-center">
-          <Link
-            href="/events"
-            className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
+            className="cursor-not-allowed tracking-widest text-zinc-500 hover:text-sm hover:rounded-md px-2 py-3"
           >
             SUBSCRIPTIONS
           </Link>
         </div>
         <div className="tracking-widest hidden lg:flex justify-center">
           <Link
-            href="#about"
+            href="/about"
             className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
           >
             ABOUT US
@@ -172,7 +172,7 @@ const NavBar = () => {
         </div>
         <div className="hidden lg:flex justify-center">
           <Link
-            href="#contact"
+            href="/contact"
             className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
           >
             CONTACT INFO

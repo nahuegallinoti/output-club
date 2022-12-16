@@ -18,7 +18,7 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="z-10 bg-black w-screen h-screen relative pt-5 mb-5">
+    <div className="z-10 bg-black w-screen relative pt-5 mb-5">
       <section
         id="gallery"
         className="flex items-center justify-center mx-auto w-full z-10 bg-black"
