@@ -48,7 +48,7 @@ const EventsPage = () => {
     hoveredStyles:
       "md:w-3/4 cursor-pointer opacity-100 border-[1px] border-white",
     articleStyle:
-      "shadow-inner shadow-white overflow-hidden transition-all duration-500 mx-5 max-h-fit lg:max-w-2/3 sm:w-2/3 md:p-4",
+      "overflow-hidden transition-all duration-500 mx-5 max-h-fit lg:max-w-2/3 sm:w-2/3 md:p-4",
     sectionStyle: "flex sm:flex-row flex-col",
     descriptionStyles: {
       sectionDescriptionStyle:
@@ -59,7 +59,7 @@ const EventsPage = () => {
   };
 
   return (
-    <section className="flex flex-col my-6 md:gap-15 gap-10 z-10 items-center">
+    <section className="flex flex-col mt-10 md:gap-15 gap-10 z-10 items-center">
       <h1>
         <span className="text-4xl text-white font-bold">Events</span>
         <span className="text-4xl font-bold text-red-500">.</span>
@@ -67,9 +67,9 @@ const EventsPage = () => {
 
       {events.map((event) => (
         <>
-          <h1 className="text-center">
-            <span className="text-2xl text-white font-bold">{event.title}</span>
-            <span className="text-4xl font-bold text-blue-500">.</span>
+          <h1 className="text-center mt-10 hover:border-b-[1px] border-cyan-700">
+            <span className="text-md text-white font-bold">{event.title}</span>
+            <span className="text-md font-bold text-blue-500">.</span>
           </h1>
           <Card content={event} key={event.id} styles={styles} />
         </>

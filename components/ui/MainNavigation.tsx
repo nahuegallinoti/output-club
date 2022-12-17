@@ -32,7 +32,7 @@ const NavBar = () => {
         bg || isNavOpen ? "bg-black text-gray-500" : ""
       } transition duration-500 h-14 flex items-center`}
     >
-      <nav className="flex justify-center items-center lg:grid lg:grid-cols-nav text-xs font-bold h-14 w-full ">
+      <nav className="flex justify-between items-center lg:grid lg:grid-cols-nav text-xs font-bold h-14 w-full ">
         {/* Burger menu */}
         <section className="flex lg:hidden items-center z-20 pb-2">
           {/* X */}
@@ -64,9 +64,7 @@ const NavBar = () => {
           {/* Burger menu options */}
           <div
             className={
-              isNavOpen
-                ? "absolute top-0 left-0 flex flex-col justify-evenly items-center w-full bg-black"
-                : "hidden"
+              isNavOpen ? "fixed top-0 left-0 w-full h-full bg-black" : "hidden"
             }
           >
             <ul
@@ -100,15 +98,6 @@ const NavBar = () => {
 
               <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
                 <Link
-                  href="/events"
-                  className="hover:cursor-not-allowed text-zinc-500 hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
-                >
-                  SUBSCRIPTIONS
-                </Link>
-              </li>
-
-              <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
-                <Link
                   href="/about"
                   className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
                 >
@@ -121,6 +110,14 @@ const NavBar = () => {
                   className="text-white hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
                 >
                   CONTACT INFO
+                </Link>
+              </li>
+              <li className="border-b border-gray-300 my-8 uppercase first-letter:text-2xl text-white">
+                <Link
+                  href="/events"
+                  className="hover:cursor-not-allowed text-zinc-500 hover:bg-white hover:text-black hover:rounded-md px-2 py-1"
+                >
+                  SUBSCRIPTIONS
                 </Link>
               </li>
             </ul>
@@ -154,14 +151,6 @@ const NavBar = () => {
             STREAMS
           </Link>
         </div>
-        <div className="hidden lg:flex justify-center">
-          <Link
-            href="/events"
-            className="cursor-not-allowed tracking-widest text-zinc-500 hover:text-sm hover:rounded-md px-2 py-3"
-          >
-            SUBSCRIPTIONS
-          </Link>
-        </div>
         <div className="tracking-widest hidden lg:flex justify-center">
           <Link
             href="/about"
@@ -176,6 +165,14 @@ const NavBar = () => {
             className="tracking-widest text-white hover:text-sm hover:rounded-md px-2 py-3 hover:cursor-pointer"
           >
             CONTACT INFO
+          </Link>
+        </div>
+        <div className="hidden lg:flex justify-center">
+          <Link
+            href="/events"
+            className="cursor-not-allowed tracking-widest text-zinc-500 hover:text-sm hover:rounded-md px-2 py-3"
+          >
+            SUBSCRIPTIONS
           </Link>
         </div>
       </nav>
