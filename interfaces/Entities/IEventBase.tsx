@@ -5,4 +5,5 @@ export interface IEventBase {
   tags: string[];
   images: string[];
   type: string;
+  place: string;
 }

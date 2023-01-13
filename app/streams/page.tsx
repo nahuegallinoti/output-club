@@ -7,36 +7,40 @@ function StreamsPage() {
   const streams: IStream[] = [
     {
       id: 1,
-      title: "Traumer - Live @ Output Barcelona",
+      title: "Traumer - Live",
       description:
         "Description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint et consectetur, pariatur architecto dolore obcaecati dolorem sed assumenda voluptates porro ab qui odit sequi ducimus eveniet totam harum officiis nostrum.",
       tags: ["Madrid"],
       images: ["1.jpg", "2.jpg", "3.jpg"],
       type: "stream",
+      place: "Output Barcelona",
     },
     {
       id: 2,
-      title: "Regal @ LesEnfants Barcelona",
+      title: "Regal",
       description: "Description",
       tags: ["Barcelona"],
       images: ["4.jpg", "5.jpg"],
       type: "stream",
+      place: "LesEnfants Barcelona",
     },
     {
       id: 3,
-      title: "Bastian Bux @ Output Barcelona",
+      title: "Bastian Bux",
       description: "Description",
       tags: ["Malaga"],
       images: ["6.jpg", "7.jpg", "8.jpg"],
       type: "stream",
+      place: "LesEnfants Barcelona",
     },
     {
       id: 4,
-      title: "Ebali - Live @ LesEnfants Barcelona",
+      title: "Ebali",
       description: "Description",
       tags: ["Tenerife"],
       images: ["9.jpg", "10.jpg"],
       type: "stream",
+      place: "Output Barcelona",
     },
   ];
 
@@ -62,15 +66,16 @@ function StreamsPage() {
         <span className="text-4xl text-white font-bold">Streams</span>
         <span className="text-4xl font-bold text-blue-500">.</span>
       </h1>
+
       {streams.map((stream) => (
         <div>
-          <h1 className="text-center">
-            <span className="text-md text-white font-bold hover:border-b-[1px] border-red-500">
-              {stream.title}
+          <h1 className="text-center my-5">
+            <span className="text-lg text-white font-bold hover:border-b-[1px] border-red-700">
+              {stream.title} @ {stream.place}
             </span>
-            <span className="text-3xl font-bold text-red-500">.</span>
+            <span className="text-2xl font-bold text-red-500">.</span>
           </h1>
-          <Card content={stream} styles={styles} />
+          <Card content={stream} key={stream.id} styles={styles} />
         </div>
       ))}
     </section>

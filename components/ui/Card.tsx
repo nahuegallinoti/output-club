@@ -33,7 +33,7 @@ const Card = ({ content, styles }: IEventProps) => {
               alt={content.title}
               key={content.id}
               width={450}
-              height={500}
+              height={400}
               className={`${imageStyle}`}
             />
           ))}

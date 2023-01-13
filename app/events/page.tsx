@@ -7,39 +7,43 @@ const EventsPage = () => {
   const events: IEvent[] = [
     {
       id: 1,
-      title: "DETROIT IN EFFECT - LUMIERE",
+      title: "Detroit in effect - Lumiere",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aspernatur assumenda similique quas, pariatur et deserunt, ipsam quia explicabo aliquam nam autem doloribus accusamus dolor sit in aperiam. ",
       tags: ["LesEnfants"],
       images: ["flyers/1.jpg"],
       type: "event",
+      place: "LesEnfants Barcelona",
     },
     {
       id: 2,
-      title: "APOLLONIA",
+      title: "Apollonia",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       tags: ["NOV - 19"],
       images: ["flyers/2.jpg"],
       type: "event",
+      place: "Output Barcelona",
     },
     {
       id: 3,
-      title: "AMELIE LENS",
+      title: "Amelie Lens",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       tags: ["NOV - 04"],
       images: ["flyers/3.jpg"],
       type: "event",
+      place: "Output Barcelona",
     },
     {
       id: 4,
-      title: "OXIA",
+      title: "Oxia",
       description:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aperiam, velit esse, officia nam asperiores reiciendis repellat molestiae",
       tags: ["NOV - 11"],
       images: ["flyers/4.jpg"],
       type: "event",
+      place: "LesEnfants Barcelona",
     },
   ];
 
@@ -59,7 +63,7 @@ const EventsPage = () => {
   };
 
   return (
-    <section className="flex flex-col mt-10 md:gap-15 gap-10 z-10 items-center">
+    <section className="flex flex-col mt-10 gap-10 items-center">
       <h1>
         <span className="text-4xl text-white font-bold">Events</span>
         <span className="text-4xl font-bold text-red-500">.</span>
@@ -67,9 +71,11 @@ const EventsPage = () => {
 
       {events.map((event) => (
         <>
-          <h1 className="text-center mt-10 hover:border-b-[1px] border-cyan-700">
-            <span className="text-md text-white font-bold">{event.title}</span>
-            <span className="text-md font-bold text-blue-500">.</span>
+          <h1 className="text-center mt-14 hover:border-b-[1px] border-cyan-700">
+            <span className="text-lg text-white font-bold">
+              {event.title} @ {event.place}
+            </span>
+            <span className="text-2xl font-bold text-blue-500">.</span>
           </h1>
           <Card content={event} key={event.id} styles={styles} />
         </>
