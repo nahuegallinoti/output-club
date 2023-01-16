@@ -3,7 +3,7 @@ import { FaInstagram, FaYoutube, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section className="flex flex-col items-center justify-center text-2xl gap-5 text-white text-bold lg:mx-72 lg:my-24 mx-8 my-8 tracking-wide">
+    <section className="flex flex-col items-center justify-center text-2xl gap-5 text-white text-bold lg:mx-72 lg:my-24 mx-auto my-8 tracking-wide xs:mx-8">
       <div
         className="flex justify-between w-1/2
        items-center text-center my-20"
@@ -34,7 +34,7 @@ const Contact = () => {
         </a>
       </div>
 
-      <div className="flex flex-col mx-auto gap-5 bg-white/10 p-5 rounded-xl text-lg text-white">
+      <div className="md:w-2/3 flex flex-col mx-8 gap-5 bg-white/10 p-5 rounded-xl text-lg text-white">
         <p>
           If you have any questions or would like to get in touch with us,
           please don't hesitate to contact us using the following information:

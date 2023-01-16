@@ -63,20 +63,25 @@ const EventsPage = () => {
   };
 
   return (
-    <section className="flex flex-col mt-10 gap-10 items-center">
+    <section className="flex flex-col mt-10 md:gap-20 gap-10 items-center">
       <h1>
-        <span className="text-4xl text-white font-bold">Events</span>
-        <span className="text-4xl font-bold text-red-500">.</span>
+        <span className="text-4xl text-white font-bold hover:cursor-default">
+          Events
+        </span>
+        <span className="text-4xl font-bold text-red-600">.</span>
       </h1>
 
       {events.map((event) => (
         <>
-          <h1 className="text-center mt-14 hover:border-b-[1px] border-cyan-700">
-            <span className="text-lg text-white font-bold">
-              {event.title} @ {event.place}
-            </span>
-            <span className="text-2xl font-bold text-blue-500">.</span>
-          </h1>
+          <div className="px-5 py-2 text-center hover:animate-pulse hover:cursor-default">
+            <h1 className="text-md font-extrabold text-red-600 font-centauri tracking-extra">
+              {event.title}
+            </h1>
+            <h1 className="text-xs text-white font-bold mt-2 font-varino tracking-semiextra">
+              @ {event.place}
+              <span className="text-xs font-bold text-white">.</span>
+            </h1>
+          </div>
           <Card content={event} key={event.id} styles={styles} />
         </>
       ))}

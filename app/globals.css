@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Centauri";
+  src: url("../public/fonts/Centauri.ttf") format("truetype");
+  }
 
+@font-face {
+  font-family: "Varino";
+  src: url("../public/fonts/Varino.ttf") format("truetype");
+  }
 
 * {
   box-sizing: border-box;

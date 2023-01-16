@@ -125,7 +125,7 @@ const NavBar = () => {
         </section>
 
         {/* Full menu */}
-        <Link href="/" className="text-white my-4 mx-10">
+        <Link href="/" className="text-white my-4 ml-3">
           <Image
             src="/images/logo.png"
             width={100}

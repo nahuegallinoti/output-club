@@ -56,25 +56,27 @@ function StreamsPage() {
       titleStyle: "font-bold text-2xl bg-white text-black w-fit px-2 py-2",
       descriptionStyle: "font-semibold text-xl text-white",
     },
-    imageStyle:
-      "transition-all duration-500 hover:scale-110 hover:shadow-md hover:shadow-cyan-700",
+    imageStyle: "transition-all duration-500 hover:scale-110",
   };
 
   return (
     <section className="flex flex-col mt-10 md:gap-20 gap-10 items-center">
-      <h1>
+      <h1 className="hover:cursor-default">
         <span className="text-4xl text-white font-bold">Streams</span>
-        <span className="text-4xl font-bold text-blue-500">.</span>
+        <span className="text-4xl font-bold text-blue-800">.</span>
       </h1>
 
       {streams.map((stream) => (
         <div>
-          <h1 className="text-center my-5">
-            <span className="text-lg text-white font-bold hover:border-b-[1px] border-red-700">
-              {stream.title} @ {stream.place}
-            </span>
-            <span className="text-2xl font-bold text-red-500">.</span>
-          </h1>
+          <div className="px-5 py-2 text-center hover:animate-pulse hover:cursor-default">
+            <h1 className="text-md font-extrabold text-blue-800 font-centauri tracking-extra">
+              {stream.title}
+            </h1>
+            <h1 className="text-xs text-white font-bold mt-2 font-varino tracking-semiextra">
+              @ {stream.place}
+              <span className="text-xs font-bold text-white">.</span>
+            </h1>
+          </div>
           <Card content={stream} key={stream.id} styles={styles} />
         </div>
       ))}
